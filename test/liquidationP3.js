@@ -2,10 +2,10 @@ const { expect } = require("chai");
 const { network, ethers } = require("hardhat");
 const { BigNumber, utils } = require("ethers");
 
-describe("Liquidation with requirement from question 3", function () {
+describe("question 3", function () {
     // 2000 USDT
 
-    it("test : ", async function () {
+    it("test with 8250 USDT", async function () {
         console.log("\n\n-----")
         await network.provider.request({
             method: "hardhat_reset",
@@ -20,7 +20,7 @@ describe("Liquidation with requirement from question 3", function () {
         });
 
         const gasPrice = 0;
-        const debt = 8500;
+        const debt = 8250;
         const usdtValue = ethers.utils.parseUnits(debt.toString(), 6);
         const accounts = await ethers.getSigners();
         const liquidator = accounts[0].address;
@@ -88,7 +88,7 @@ describe("Liquidation with requirement from question 3", function () {
         );
 
         expect(profit.gt(BigNumber.from(0)), "not profitable").to.be.true;
-        console.log("--------------------------------------------------")
+        console.log("----------------------------------------------------")
     });
 
 });

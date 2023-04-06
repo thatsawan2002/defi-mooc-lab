@@ -2,9 +2,9 @@ const { expect } = require("chai");
 const { network, ethers } = require("hardhat");
 const { BigNumber, utils } = require("ethers");
 
-describe("Liquidation with requirement from question 2", function () {
+describe("question 2", function () {
     // 2000 USDT
-    it("should liquidate with 2000 USDT", async function () {
+    it("test with 2000 USDT", async function () {
         console.log(
             "\n\n----- 2000 USDT -----"
         );
@@ -87,11 +87,11 @@ describe("Liquidation with requirement from question 2", function () {
         );
 
         expect(profit.gt(BigNumber.from(0)), "not profitable").to.be.true;
-        console.log("================================================");
+        console.log("----------------------------------------------------");
     });
     // 5000 USDT
 
-    it("should liquidate with 5000 USDT", async function () {
+    it("test with 5000 USDT", async function () {
         console.log(
             "\n\n----- 5000 USDT -----"
         );
@@ -174,12 +174,12 @@ describe("Liquidation with requirement from question 2", function () {
         );
 
         expect(profit.gt(BigNumber.from(0)), "not profitable").to.be.true;
-        console.log("================================================");
+        console.log("----------------------------------------------------");
     });
 
     // 10000 USDT
 
-    it("should NOT liquidate with 10000 USDT (transaction reverted)", async function () {
+    it("test with 10000 USDT", async function () {
         console.log(
             "\n\n----- 10000 USDT -----"
         );
@@ -215,6 +215,6 @@ describe("Liquidation with requirement from question 2", function () {
             )
         ).to.be.reverted;
 
-        console.log("================================================");
+        console.log("----------------------------------------------------");
     });
 });
